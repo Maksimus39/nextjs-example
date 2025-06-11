@@ -1,3 +1,3 @@
-import {Character} from "@/assets/hooks/useCharacters";
+import {CharacterType} from "@/assets/hooks/useCharacters";
 
-export type nullable = null | Character[]
+export type nullable = null | CharacterType[]

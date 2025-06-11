@@ -1,12 +1,12 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {nullable} from "@/assets/types";
+import {nullable} from "assets/types";
 
 export const useCharacters = (): nullable => {
     const [characters, setCharacters] = useState<nullable>(null)
 
     useEffect(() => {
-        axios.get("https://rickandmortyapi.com/api/character").then(res => {
+        axios.get(`${process.env.NEXT_PUBLIC_RICK_AND_MORTY_API_URL}/character`).then(res => {
             console.log(res.data.results)
             setCharacters(res.data.results)
         })
@@ -19,7 +19,7 @@ type Location = {
     name: string;
     url: string;
 };
-export type Character = {
+export type CharacterType = {
     created: string;
     episode: string[];
     gender: string;

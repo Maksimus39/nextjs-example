@@ -1,15 +1,16 @@
 import Image from "next/image";
-import {Character} from "@/assets/hooks/useCharacters";
+import styles from "./CharactersCard.module.css"
+import {CharacterType} from "assets/hooks/useCharacters";
 
 
 type Props = {
-    character: Character
+    character: CharacterType
 }
 export const CharactersCard = (props: Props) => {
     const {character} = props
 
 
-    return <div key={character.id}>
+    return <div key={character.id} className={styles.card}>
         <div>{character.name}</div>
         <Image src={character.image}
                alt={character.location.name}

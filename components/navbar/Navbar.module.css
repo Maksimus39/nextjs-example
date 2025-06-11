@@ -1,0 +1,13 @@
+.link {
+    display: flex;
+    column-gap: 20px;
+
+
+    & a:hover {
+        color: #e44167;
+    }
+}
+
+.link a {
+    text-decoration: none;
+}
